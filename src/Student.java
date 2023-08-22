@@ -43,6 +43,7 @@ public class Student {
 
     public static boolean searchStudent(){
         Scanner input = new Scanner(System.in);
+        StudentData student = new StudentData();
 
         System.out.print("Enter a student id to search: ");
         String idSearch = input.nextLine();
@@ -52,19 +53,9 @@ public class Student {
         for (int i = 0; i < students.size(); i++){
             if (students.get(i).getId().contains(idSearch)){
                 contains = true;
+                student = students.get(i);
             } else{
                 contains = false;
-            }
-
-            if (contains = true){
-                System.out.print("\nSTUDENT ID: " + students.get(i).getId());
-                System.out.print("\nSTUDENT NAME: " + students.get(i).getFirstName());
-                System.out.print("\nSTUDENT AGE: " + students.get(i).getAge());
-                System.out.print("\nSTUDENT EMAIL: " + students.get(i).getEmail());
-                System.out.print("\nSTUDENT COURSE: " + students.get(i).getCourse());
-            }
-            else {
-                System.out.print("\nStudent with Student Id: " + idSearch + " was not found!");
             }
         }
 
