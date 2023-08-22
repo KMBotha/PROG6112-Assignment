@@ -11,7 +11,7 @@ public class Student {
         System.out.print("CAPTURE A NEW STUDENT"
         + "\n*********************************");
 
-        System.out.print("Enter the student ID: ");
+        System.out.print("\nEnter the student ID: ");
         String id = input.nextLine();
 
         System.out.print("Enter the student name: ");
@@ -28,7 +28,7 @@ public class Student {
         System.out.print("Enter the student email: ");
         String email = input.nextLine();
 
-        System.out.print("Enter the student course");
+        System.out.print("Enter the student course: ");
         String course = input.nextLine();
 
         StudentData student = new StudentData(id, name, email, course, age);
@@ -41,13 +41,37 @@ public class Student {
         return exit.equals("1");
     }
 
-    public static void searchStudent(){
+    public static boolean searchStudent(){
         Scanner input = new Scanner(System.in);
 
         System.out.print("Enter a student id to search: ");
-        System.out.print("-----------------------------------------");
-        idSearch
+        String idSearch = input.nextLine();
+        System.out.print("\n-----------------------------------------");
 
+        boolean contains = false;
+        for (int i = 0; i < students.size(); i++){
+            if (students.get(i).getId().contains(idSearch)){
+                contains = true;
+            } else{
+                contains = false;
+            }
+
+            if (contains = true){
+                System.out.print("\nSTUDENT ID: " + students.get(i).getId());
+                System.out.print("\nSTUDENT NAME: " + students.get(i).getFirstName());
+                System.out.print("\nSTUDENT AGE: " + students.get(i).getAge());
+                System.out.print("\nSTUDENT EMAIL: " + students.get(i).getEmail());
+                System.out.print("\nSTUDENT COURSE: " + students.get(i).getCourse());
+            }
+            else {
+                System.out.print("\nStudent with Student Id: " + idSearch + " was not found!");
+            }
+        }
+
+        System.out.print("\nEnter (1) to launch menu or any other key to exit.");
+        String exit = input.nextLine();
+
+        return exit.equals("1");
     }
 
     public static void deleteStudent(){

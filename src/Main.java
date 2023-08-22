@@ -9,12 +9,12 @@ public class Main {
         do {
             Scanner menu = new Scanner(System.in);
             System.out.println("STUDENT MANAGEMENT APPLICATION" +
-                    "\n***************************" +
-                    "\nEnter (1) ro launch menu or any other key to exit");
+                    "\n*******************************" +
+                    "\nEnter (1) t1o launch menu or any other key to exit");
             int input = Integer.parseInt(menu.nextLine());
             if (input == 1) {
 
-                System.out.println("Please select one of the following menu items:"
+                System.out.println("Please select one of the following menu items: "
                         + "\n(1) Capture a new student."
                         + "\n(2) Search for a student."
                         + "\n(3) Delete a student."
