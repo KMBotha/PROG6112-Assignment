@@ -10,7 +10,7 @@ public class Main {
             Scanner menu = new Scanner(System.in);
             System.out.println("STUDENT MANAGEMENT APPLICATION" +
                     "\n*******************************" +
-                    "\nEnter (1) t1o launch menu or any other key to exit");
+                    "\nEnter (1) to launch menu or any other key to exit");
             int input = Integer.parseInt(menu.nextLine());
             if (input == 1) {
 
