@@ -58,11 +58,30 @@ public class Student {
                 contains = false;
             }
         }
+        System.out.print(searchMessage(contains, student, idSearch));
 
         System.out.print("\nEnter (1) to launch menu or any other key to exit.");
         String exit = input.nextLine();
 
         return exit.equals("1");
+    }
+
+    public static String searchMessage(boolean containsId, StudentData student, String input){
+        String message;
+        for(int i = 0; i < students.size(); i++){
+            if (containsId){
+                message = "\nSTUDENT ID: " + students.get(i).getId()
+                        + "\nSTUDENT NAME: " + students.get(i).getFirstName()
+                        + "\nSTUDENT AGE: " + students.get(i).getAge()
+                        + "\nSTUDENT EMAIL: " + students.get(i).getEmail()
+                        + "\nSTUDENT COURSE: " + students.get(i).getCourse();
+            }
+            else{
+                message = "\nStudent with Student Id: " + input + " was not found!";
+            }
+        }
+
+        return message;
     }
 
     public static void deleteStudent(){
